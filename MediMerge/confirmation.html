@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Confirmation Page Styles */
+        .confirmation-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .confirmation-heading {
+            margin-bottom: 20px;
+        }
+
+        .confirmation-heading h2 {
+            font-size: 32px;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .order-details {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .order-details h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .order-details p {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .receipt {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .receipt h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .receipt p {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .whatsapp-button {
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128c7e;
+        }
+
+        .return-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .return-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="confirmation-heading">
+            <h2>Order Confirmed</h2>
+        </div>
+        <div class="order-details">
+            <h3>Thank you for your purchase, <span id="customerName"></span>!</h3>
+            <p><strong>Order Date:</strong> <span id="orderDate"></span></p>
+            <p><strong>Product Name:</strong> <span id="productName"></span></p>
+            <p><strong>Total Amount:</strong> ₹<span id="totalAmount"></span></p>
+        </div>
+        <div class="receipt">
+            <h4>Receipt Details</h4>
+            <p>Customer: <span id="customerReceiptName"></span></p>
+            <p>Order Date: <span id="receiptDate"></span></p>
+            <p>Product: <span id="receiptProductName"></span></p>
+            <p>Total Amount: ₹<span id="receiptTotalAmount"></span></p>
+        </div>
+        <button class="whatsapp-button" onclick="sendReceiptToWhatsApp()">Send Receipt to WhatsApp</button>
+        <br>
+        <button class="return-button" onclick="returnToShop()">Return to Shop</button>
+    </div>
+
+    <script>
+        // Simulated order data retrieval from localStorage
+        function loadOrderDetails() {
+            const customerName = localStorage.getItem('fullName') || 'John Doe';
+            const productName = 'Product X'; // Replace this with dynamic product names if needed
+            const totalAmount = JSON.parse(localStorage.getItem('cart')).reduce((sum, item) => sum + item.price * item.quantity, 0) || '0.00';
+            const orderDate = new Date().toLocaleDateString();
+
+            // Display details in the DOM
+            document.getElementById('customerName').innerText = customerName;
+            document.getElementById('productName').innerText = productName;
+            document.getElementById('totalAmount').innerText = totalAmount;
+            document.getElementById('orderDate').innerText = orderDate;
+
+            // Receipt details
+            document.getElementById('customerReceiptName').innerText = customerName;
+            document.getElementById('receiptProductName').innerText = productName;
+            document.getElementById('receiptTotalAmount').innerText = totalAmount;
+            document.getElementById('receiptDate').innerText = orderDate;
+        }
+
+        // WhatsApp API integration to send receipt details
+        function sendReceiptToWhatsApp() {
+            const customerName = localStorage.getItem('fullName') || 'John Doe';
+            const totalAmount = JSON.parse(localStorage.getItem('cart')).reduce((sum, item) => sum + item.price * item.quantity, 0) || '0.00';
+            const orderDate = new Date().toLocaleDateString();
+            const phoneNumber = localStorage.getItem('phoneNumber') || ''; // Ensure this is filled
+            const message = `Hi ${customerName}, your order has been confirmed on ${orderDate}. Total Amount: ₹${totalAmount}. Thank you for shopping with us!`;
+
+            const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL);
+        }
+
+        function returnToShop() {
+            window.location.href = "mini world project\medico.html"; // Redirect to shop or home page
+        }
+
+        // Load order details when the page loads
+        window.onload = loadOrderDetails;
+    </script>
+</body>
+</html>

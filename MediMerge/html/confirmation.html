@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
+    <style>
+        /* Additional CSS for Confirmation Page */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .confirmation-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .confirmation-heading h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .order-details {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .order-details h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .order-details .item {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .order-details .item span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .order-details .total {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .continue-shopping {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .continue-shopping a {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-decoration: none;
+            outline: none;
+        }
+
+        .continue-shopping a:hover {
+            background-color: #0056b3;
+        }
+         /* Additional CSS for Confirmation Page */
+         body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .confirmation-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .confirmation-heading h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .order-details {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .order-details h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .order-details .item {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .order-details .item span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .order-details .total {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .continue-shopping {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .continue-shopping a {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-decoration: none;
+            outline: none;
+        }
+
+        .continue-shopping a:hover {
+            background-color: #0056b3;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="confirmation-heading">
+            <img style="height: 110px;width: 110px;display: flex;" src="medi.png" alt="Logo" class="logo">
+            <h2>Order donfirmation</h2>
+        </div>
+        <div class="order-details">
+            <h3>Order Details</h3>
+            <p class="item"><span>Order ID:</span> <span id="orderID"></span></p>
+            <p class="item"><span>Order Date:</span> <span id="orderDate"></span></p>
+            <p class="item"><span>Total Amount:</span> <span id="orderTotal"></span></p>
+            <p class="item"><span>Payment Method:</span> <span id="paymentMethod"></span></p>
+            <p class="item"><span>Shipping Address:</span> <span id="shippingAddress"></span></p>
+        </div>
+        <div class="continue-shopping">
+            <a href="product.html">Continue Shopping</a>
+        </div>
+    </div>
+    </div>
+
+
+
+    <script>
+        function loadOrderDetails() {
+    // Retrieve order details from localStorage (this is just for demonstration)
+    let orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
+
+    if (orderDetails) {
+        document.getElementById('orderID').innerText = `#${orderDetails.orderID || 'N/A'}`;
+        document.getElementById('orderDate').innerText = orderDetails.orderDate || 'N/A';
+        document.getElementById('orderTotal').innerText = `₹${(orderDetails.orderTotal || 0).toFixed(2)}`;
+        document.getElementById('paymentMethod').innerText = getPaymentDetails(orderDetails);
+        document.getElementById('shippingAddress').innerText = orderDetails.shippingAddress || 'N/A';
+        document.getElementById('totalAmount').innerText = `₹${(orderDetails.orderTotal || 0).toFixed(2)}`;
+
+        if (orderDetails.paymentMethod === 'cashOnDelivery') {
+            document.getElementById('deliveryTime').innerText = getDeliveryTime();
+        } else {
+            document.getElementById('deliveryTime').innerText = 'N/A';
+        }
+    }
+}
+
+function getPaymentDetails(orderDetails) {
+    if (orderDetails.paymentMethod === 'creditCard' || orderDetails.paymentMethod === 'debitCard') {
+        return `${orderDetails.paymentMethod.replace(/([A-Z])/g, ' $1').trim()} ending in ${orderDetails.cardNumber ? orderDetails.cardNumber.slice(-4) : 'XXXX'}`;
+    } else if (orderDetails.paymentMethod === 'paypal') {
+        return 'PayPal';
+    } else {
+        return 'Cash On Delivery';
+    }
+}
+
+function getDeliveryTime() {
+    let deliveryDate = new Date();
+    deliveryDate.setDate(deliveryDate.getDate() + 5);
+    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return `Estimated delivery by ${deliveryDate.toLocaleDateString('en-US', options)} at ${deliveryDate.toLocaleTimeString('en-US')}`;
+}
+
+// Load order details when the page loads
+window.onload = loadOrderDetails;
+
+let orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
+
+// Generate the QR Code for Google Pay
+let qrCode = new QRCode(document.getElementById('qrcode'), {
+    text: `upi://pay?pa=your-merchant-upi-id&pn=${encodeURIComponent(orderDetails.fullName)}&mc=your-merchant-code&tid=your-transaction-id&tr=${orderDetails.orderID}&tn=Payment for Order ID ${orderDetails.orderID}&am=${orderDetails.orderTotal}&cu=INR`,
+    width: 200,
+    height: 200
+});
+
+    </script>
+</body>
+</html>

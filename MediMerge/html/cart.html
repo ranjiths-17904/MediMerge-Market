@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart Page</title>
+    <style>
+       /* General Styles */
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart Section Styles */
+.cart {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.cart:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cart .heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cart .heading h2 {
+    font-size: 32px;
+    color: #333;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cart .cart-item {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart .cart-item:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cart .cart-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 25px;
+}
+
+.cart .cart-item .item-details {
+    flex: 1;
+    margin-right: 15px;
+}
+
+.cart .cart-item .name {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.cart .cart-item .quantity {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.cart .cart-item .price {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.cart .cart-item .quantity-control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.cart .cart-item .quantity-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    outline: none;
+    margin: 0 8px;
+}
+
+.cart .cart-item .quantity-button:hover {
+    background-color: #0056b3;
+}
+
+.cart .cart-item .remove-button {
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    outline: none;
+}
+
+.cart .cart-item .remove-button:hover {
+    background-color: #cc0000;
+}
+
+.cart .total {
+    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #333;
+}
+
+.orderNow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 2px solid #007bff;
+}
+
+.orderNow .btn-container {
+    text-align: center;
+}
+
+.orderNow button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    text-transform: uppercase;
+    outline: none;
+    font-weight: bold;
+}
+
+.orderNow button:hover {
+    background-color: #0056b3;
+}
+
+.orderNow a {
+    text-decoration: none;
+}
+
+.orderNow a button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    font-weight: bold;
+}
+
+.orderNow a button:hover {
+    background-color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .cart {
+        padding: 25px;
+    }
+
+    .cart .heading h2 {
+        font-size: 26px;
+    }
+
+    .cart .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px;
+    }
+
+    .cart .cart-item img {
+        margin-bottom: 15px;
+    }
+
+    .cart .cart-item .item-details {
+        margin-bottom: 15px;
+    }
+
+    .cart .total {
+        font-size: 22px;
+    }
+
+    .orderNow {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .orderNow .btn-container {
+        margin-top: 25px;
+    }
+}
+
+    </style>
+    <script>
+       function loadCart() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartContainer = document.getElementById('cart-container');
+    cartContainer.innerHTML = ''; // Clear the container before adding items
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        let itemElement = document.createElement('div');
+        itemElement.className = 'cart-item';
+        itemElement.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <div class="item-details">
+                <span class="name">${item.name}</span>
+                <div class="quantity-control">
+                    <button class="quantity-button" onclick="updateQuantity(${index}, -1)">-</button>
+                    <span class="quantity">${item.quantity}</span>
+                    <button class="quantity-button" onclick="updateQuantity(${index}, 1)">+</button>
+                </div>
+                <span class="price">Price: &#8377;${(item.price * item.quantity).toFixed(2)}</span>
+            </div>
+            <button class="remove-button" onclick="removeFromCart(${index})">Remove</button>
+        `;
+        cartContainer.appendChild(itemElement);
+        total += item.price * item.quantity;
+    });
+
+    document.getElementById('total').innerHTML = `Total: &#8377;${total.toFixed(2)}`;
+}
+
+function updateQuantity(index, change) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart[index].quantity += change;
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1); // Remove the item if the quantity reaches 0
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    loadCart(); // Reload the cart to reflect the changes
+}
+
+function removeFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1); // Remove the item at the given index
+    localStorage.setItem('cart', JSON.stringify(cart));
+    loadCart(); // Reload the cart to reflect the changes
+}
+
+function proceedToPayment() {
+    // Here you would redirect to the payment page or handle payment processing
+    alert("Proceeding to payment...");
+}
+
+window.onload = loadCart;
+    </script>
+</head>
+<body>
+    
+    
+    <section class="cart" id="cart">
+        <img style="height: 110px;width: 110px;" src="medi.png" alt="Logo" class="logo">
+        <div class="heading">
+            <h2>Your Cart</h2>
+        </div>
+        <div id="cart-container">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="total" id="total">
+            <!-- Total amount will be dynamically added here -->
+        </div>
+        <div class="orderNow">
+           <a href="checkout.html"> <button onclick="proceedToPayment()">Proceed to Payment</button></a>
+            <div class="btn-container">
+                <a href="product.html"><button>Continue Shopping</button></a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+

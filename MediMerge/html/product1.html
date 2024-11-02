@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product Page</title>
+    <link rel="stylesheet" href="product.css">
+    <script src="productj.js" defer></script>
+    
+
+</head>
+
+<body>
+
+    <section class="Products" id="Products">
+        <div class="heading">
+            <div class="orderNow" style="justify-content: space-between;display:flexbox;">
+                <img src="medi.png" style="height: 90px;width: 90px; display: flex;">
+                <a href="medico.html"><button style="background-color: black;" type="button">Home</button></a>
+                <a href="cart.html"><button type="button" style="background-color: black;">Cart</button></a>
+            </div>
+            <br><br>
+            <div>
+                <input type="text" id="searchInput" placeholder="Search products...">
+                <button onclick="searchProduct()">Search</button>
+                <button onclick="resetSearch()">Reset</button>
+            </div>
+            <hr>
+            <h2>Our Exclusive Products</h2>
+        </div>
+        <div class="swiper Products-row">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="pills.png" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Pills</h3>
+                        <p>Pill Tablet is a hormonal contraception, an effective contraceptive tablet widely used by
+                            women to avoid unwanted pregnancy. A pill was originally defined as a small.</p>
+                        <div class="product-details">
+                            <div class="price">₹7</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Pills', 7, 'pills.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="i-pill.png" alt="I Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3>I Pills</h3>
+                        <p>i-Pill Emergency Contraceptive Pill, 1 Tablet is a female hormone called progestin (a form of
+                            progesterone) used to prevent unintended pregnancy and hormone therapy women to avoid
+                            unwanted pregnancy.</p>
+                        <div class="product-details">
+                            <div class="price">₹10</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('I Pills', 10, 'i-pill.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="cold.png" alt="Cold">
+                    </div>
+                    <div class="Products-content">
+                        <h3>Cold</h3>
+                        <p>Anti Cold Tablet is a combination of medicines that effectively relieves symptoms of common
+                            cold such as blocked nose, runny nose, watery eyes, sneezing, and congestion or stuffiness.
+                            This makes it easier.</p>
+                        <div class="product-details">
+                            <div class="price">₹9</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Cold', 9, 'cold.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="Diabites.png" alt="Diabites">
+                    </div>
+                    <div class="Products-content">
+                        <h3>Diabetes</h3>
+                        <p>Diabetes is a chronic (long-lasting) health condition that affects how your body turns food
+                            into energy. Your body breaks down most of the food you eat into sugar (glucose) and
+                            releases it into your bloodstream.</p>
+                        <div class="product-details">
+                            <div class="price">₹20</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Diabites', 20, 'Diabites.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="Strength-Pain.jpg" alt="Mertin">
+                    </div>
+                    <div class="Products-content">
+                        <h3>Mertin</h3>
+                        <p>Mertin 16 Tablet is used to prevent and treat a disorder of the inner ear known as Ménière's
+                            disease. The symptoms include dizziness (vertigo), ringing in the ears (tinnitus).</p>
+                        <div class="product-details">
+                            <div class="price">12</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Mertin', 12, 'Strength-Pain.jpg')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="fever.png" alt="Paracetamol">
+                    </div>
+                    <div class="Products-content">
+                        <h3>Paracetamol</h3>
+                        <p>Paracetamol Tablet may be prescribed alone or in combination with another medicine. You
+                            should take it regularly as advised by your doctor. It is usually best taken with food
+                            otherwise it may upset your stomach.</p>
+                        <div class="product-details">
+                            <div class="price">₹5</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Paracetamol', 5, 'fever.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="headache.png" alt="Headache">
+                    </div>
+                    <div class="Products-content">
+                        <h3>Headache</h3>
+                        <p>Stopache Tablet is a combination of two medicines used in the treatment of headache. It helps
+                            relieve headache by blocking the release of certain chemical messengers that causes
+                            headache. Your doctor will advise.</p>
+                        <div class="product-details">
+                            <div class="price">₹3</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Headache', 3, 'headache.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img style="height: 100%; width: 100%;" src="aceta.jpg" alt="Acetaminophen">
+                    </div>
+                    <div class="Products-content">
+                        <h3>Acetaminophen</h3>
+                        <p>Acetaminophen is used to treat mild to moderate pain, moderate to severe pain in conjunction
+                            with opiates, or to reduce fever. Common conditions treated include headache, muscle aches.
+                        </p>
+                        <div class="product-details">
+                            <div class="price">₹29</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Acetaminophen', 29, 'aceta.jpg')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="vicks.jpg" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Vicks</h3>
+                        <p>Vicks VapoRub topical cough suppressant is brought to you by the world's #1 selling OTC cough and cold brand*! Vicks VapoRub is a topical cough over-the-counter medicine with powerful Vicks vapors.</p>
+                        <div class="product-details">
+                            <div class="price">₹35</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Vicks', 35, 'vicks.jpg')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="pampers.png" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Pampers</h3>
+                        <p>Pampers is dedicated to every baby's happy, healthy development. Learn more about us, our products and our commitment to you.</p>
+                        <div class="product-details">
+                            <div class="price">₹40</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Pampers', 40, 'pampers.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="creatine.jpeg" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Creatine</h3>
+                        <p>Creatine is a chemical found naturally in the body. It's also in red meat and seafood. It is often used to improve exercise performance and muscle mass.</p>
+                        <div class="product-details">
+                            <div class="price">₹699</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Creatine', 699, 'creatine.jpeg')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html> 

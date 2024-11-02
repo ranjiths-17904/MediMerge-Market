@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product Page</title>
+    <link rel="stylesheet" href="product.css">
+    <script src="productj.js" defer></script>
+    
+
+</head>
+
+<body>
+
+    <section class="Products" id="Products">
+        <div class="heading">
+            <div class="orderNow" style="justify-content: space-between;display:flexbox;">
+                <img src="medi.png" style="height: 90px;width: 90px; display: flex;">
+                <a href="medico.html"><button style="background-color: black;" type="button">Home</button></a>
+                <a href="cart.html"><button type="button" style="background-color: black;">Cart</button></a>
+            </div>
+            <br><br>
+            <div>
+                <input type="text" id="searchInput" placeholder="Search products...">
+                <button onclick="searchProduct()">Search</button>
+                <button onclick="resetSearch()">Reset</button>
+                <select id="sortSelect" onchange="sortProducts()">
+                    <option value="popularity">Sort by Popularity</option>
+                    <option value="aToZ">Sort by Name: A to Z</option>
+                    <option value="zToA">Sort by Name: Z to A</option>
+                    <option value="priceLowToHigh">Sort by Price: Low to High</option>
+                    <option value="priceHighToLow">Sort by Price: High to Low</option>
+                </select>
+            </div>
+            <hr>
+            <h2>Our Exclusive Products</h2>
+        </div>
+        <div class="swiper Products-row">
+            <div class="swiper-wrapper" id="productList">
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="pills.png" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Pills</h3>
+                        <p>Pill Tablet is a hormonal contraception, an effective contraceptive tablet widely used by
+                            women to avoid unwanted pregnancy. A pill was originally defined as a small.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;7</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Pills', 7, 'pills.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="i-pill.png" alt="I Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3>I Pills</h3>
+                        <p>i-Pill Emergency Contraceptive Pill, 1 Tablet is a female hormone called progestin (a form of
+                            progesterone) used to prevent unintended pregnancy and hormone therapy women to avoid
+                            unwanted pregnancy.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;10</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('I Pills', 10, 'i-pill.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="cold.png" alt="Cold">
+                    </div>
+                    <div class="Products-content">
+                        <h3>Cold</h3>
+                        <p>Anti Cold Tablet is a combination of medicines that effectively relieves symptoms of common
+                            cold such as blocked nose, runny nose, watery eyes, sneezing, and congestion or stuffiness.
+                            This makes it easier.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;9</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Cold', 9, 'cold.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="Diabites.png" alt="Diabites">
+                    </div>
+                    <div class="Products-content">
+                        <h3>Diabetes</h3>
+                        <p>Diabetes is a chronic (long-lasting) health condition that affects how your body turns food
+                            into energy. Your body breaks down most of the food you eat into sugar (glucose) and
+                            releases it into your bloodstream.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;20</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Diabites', 20, 'Diabites.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="Strength-Pain.jpg" alt="Mertin">
+                    </div>
+                    <div class="Products-content">
+                        <h3>Mertin</h3>
+                        <p>Mertin 16 Tablet is used to prevent and treat a disorder of the inner ear known as Ménière's
+                            disease. The symptoms include dizziness (vertigo), ringing in the ears (tinnitus).</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;12</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Mertin', 12, 'Strength-Pain.jpg')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="fever.png" alt="Paracetamol">
+                    </div>
+                    <div class="Products-content">
+                        <h3>Paracetamol</h3>
+                        <p>Paracetamol Tablet may be prescribed alone or in combination with another medicine. You
+                            should take it regularly as advised by your doctor. It is usually best taken with food
+                            otherwise it may upset your stomach.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;5</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Paracetamol', 5, 'fever.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="headache.png" alt="Headache">
+                    </div>
+                    <div class="Products-content">
+                        <h3>Headache</h3>
+                        <p>Stopache Tablet is a combination of two medicines used in the treatment of headache. It helps
+                            relieve headache by blocking the release of certain chemical messengers that causes
+                            headache. Your doctor will advise.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;3</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Headache', 3, 'headache.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img style="height: 100%; width: 100%;" src="aceta.jpg" alt="Acetaminophen">
+                    </div>
+                    <div class="Products-content">
+                        <h3>Acetaminophen</h3>
+                        <p>Acetaminophen is used to treat mild to moderate pain, moderate to severe pain in conjunction
+                            with opiates, or to reduce fever. Common conditions treated include headache, muscle aches.
+                        </p>
+                        <div class="product-details">
+                            <div class="price">&#8377;29</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Acetaminophen', 29, 'aceta.jpg')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="vicks.jpg" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Vicks</h3>
+                        <p>Vicks VapoRub topical cough suppressant is brought to you by the world's #1 selling OTC cough and cold brand*! Vicks VapoRub is a topical cough over-the-counter medicine with powerful Vicks vapors.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;35</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Vicks', 35, 'vicks.jpg')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="pampers.png" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Pampers</h3>
+                        <p>Pampers is dedicated to every baby's happy, healthy development. Learn more about us, our products and our commitment to you.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;40</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Pampers', 40, 'pampers.png')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="creatine.jpeg" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Creatine</h3>
+                        <p>Creatine is a chemical found naturally in the body. It's also in red meat and seafood. It is often used to improve exercise performance and muscle mass.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;699</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Creatine', 699, 'creatine.jpeg')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="pen.jpeg" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Penicillin</h3>
+                        <p>Penicillin V is an antibiotic that treats infections caused by bacteria. You can take these tablets by mouth as directed. If this medication upsets your stomach, take it with food.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;12</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Penicillin', 12, 'pen.jpeg')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="vickschoco.webp" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Vicks Cough Drop</h3>
+                        <p>Vicks Cough Drops work as a cough suppressant and/or oral anesthetic – it stops the cough before it even starts and gives you confidence to face the world.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;1</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Vicks Cough Drop', 1, 'vickschoco.webp')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="insulin.jpg" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Insulin Injection</h3>
+                        <p>Patients with advanced diabetes can't use the energy stored in their bodies. No matter how much they eat, they starve. Why? Their bodies stop making a hormone known as insulin, needed to convert sugar into energy.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;200</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Insulin Injection', 200, 'insulin.jpg')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="small.jpg" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Small Pox Injection</h3>
+                        <p>The smallpox vaccine protects people from smallpox by helping their bodies develop immunity to smallpox. The vaccine is made from a virus called vaccinia</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;175</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Small Pox Injection', 175, 'small.jpg')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="aspirin.jpeg" alt="Pills">
+                    </div>
+                    <div class="Products-content">
+                        <h3 style="color: black;">Aspirin</h3>
+                        <p>Aspirin is in a group of medications called salicylates. It works by stopping the production of certain natural substances that cause fever, pain, swelling, and blood clots.</p>
+                        <div class="product-details">
+                            <div class="price">&#8377;29</div>
+                            <div class="orderNow">
+                                <button onclick="addToCart('Aspirin', 29, 'aspirin.jpg')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html> 

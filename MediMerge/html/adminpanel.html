@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediMerge Market Admin Panel</title>
+  <link rel="stylesheet" href="/css/adminpanel.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>MediMerge</h2>
+  <ul>
+    <li><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#inventory">Inventory</a></li>
+    <li><a href="#reports">Reports</a></li>
+    <li><a href="#order-management">Order Management</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#notification">Notifications</a></li>
+    <li><a href="#chat">Chat with Visitors</a></li>
+    <li><a href="#settings">Settings</a></li>
+    <li><a href="#help">Get Help</a></li>
+  </ul>
+</div>
+
+<div class="main-content">
+  <header>
+    <input type="text" placeholder="Search here...">
+    <div class="header-right">
+      <button class="report-btn">Download Report</button>
+      <img src="admin-avatar.png" alt="Admin Avatar" class="admin-avatar">
+      <span class="admin-name">Admin</span>
+    </div>
+  </header>
+
+  <section class="dashboard">
+    <h1>Dashboard</h1>
+    <p>A quick data overview of the inventory.</p>
+
+    <!-- Metric Cards -->
+    <div class="metric-cards">
+      <div class="card inventory">
+        <h3>Inventory Status</h3>
+        <p>$50K</p>
+        <button>View Details</button>
+      </div>
+      <div class="card revenue">
+        <h3>Revenue</h3>
+        <p>$100K</p>
+        <button>View Details</button>
+      </div>
+      <div class="card available">
+        <h3>Medicine Available</h3>
+        <p>515</p>
+        <button>Visit Inventory</button>
+      </div>
+      <div class="card shortage">
+        <h3>Medicine Shortage</h3>
+        <p>2</p>
+        <button>Resolve Now</button>
+      </div>
+    </div>
+
+    <!-- Graphs and Inventory Info -->
+    <div class="dashboard-charts">
+      <div class="chart sales-chart">
+        <h3>Total Sale</h3>
+        <!-- Add a chart library or placeholder for bar chart -->
+      </div>
+      <div class="chart inventory-pie">
+        <h3>Inventory</h3>
+        <!-- Add a chart library or placeholder for pie chart -->
+      </div>
+    </div>
+
+    <!-- Recent Payments Table -->
+    <table class="recent-payments">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer Name</th>
+          <th>Date</th>
+          <th>Payment Method</th>
+          <th>Price</th>
+          <th>Invoice</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>9875635</td>
+          <td>Nayeem Bhuiyan</td>
+          <td>22/03/2023</td>
+          <td>Card</td>
+          <td>$65</td>
+          <td>Complete</td>
+        </tr>
+        <tr>
+          <td>8596635</td>
+          <td>John Alex</td>
+          <td>22/10/2023</td>
+          <td>Card</td>
+          <td>$54</td>
+          <td>Complete</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<script src="/css/adminpanel.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.Products {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.Products .heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.Products .heading h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+.Products .box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.Products .box:hover {
+    transform: translateY(-10px);
+}
+
+.Products .img {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Products .img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.Products .box:hover .img img {
+    transform: scale(1.1);
+}
+
+.Products .Products-content {
+    padding: 20px;
+}
+
+.Products .Products-content h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #000;
+}
+
+.Products .Products-content p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.Products .product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Products .price {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.Products .orderNow button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    text-transform: uppercase;
+    outline: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Products .orderNow button:hover {
+    background-color: #000000;
+}
+
+/* Grid Layout Styles */
+.Products .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.Products .swiper-slide {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .Products .swiper-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .Products .swiper-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CSS for Search Bar and Buttons */
+#searchInput {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    margin-right: -1px;
+    /* To align with buttons */
+    width: 300px;
+    /* Adjust width as needed */
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #007bff;
+    /* Focus color */
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+button:not(:last-child) {
+    margin-right: 5px;
+}
+
+#sortSelect {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    width: 200px; 
+    margin-bottom: 10px; 
+}
+
+#sortSelect:hover {
+    border-color: #999;
+}
+
+#sortSelect:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
+}

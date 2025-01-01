@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="/css/style.css"> <!-- Link to your external CSS file -->
     <style>
      body {
             font-family: 'Arial', sans-serif;
@@ -171,10 +171,10 @@
 <body>
     <div class="checkout-container">
         <div class="checkout-heading">
-            <img style="height: 110px;width: 110px;display: flex;" src="medi.png" alt="Logo" class="logo">
+            <img style="height: 110px;width: 110px;display: flex;" src="/img/medi.png" alt="Logo" class="logo">
             <h2>Checkout</h2>
         </div>
-<form id="checkoutForm" method="POST" action="saveOrder.php" onsubmit="saveOrderDetails(event)" onsubmit="prepareOrderDetails(event)">
+<form id="checkoutForm" method="POST" action="/html/saveOrder.php" onsubmit="saveOrderDetails(event)" onsubmit="prepareOrderDetails(event)">
             <div class="form-group">
                 <label for="fullName">Full Name</label>
                 <input type="text" id="fullName" name="fullName" required>
@@ -208,7 +208,7 @@
             <div class="form-group">
                 <button type="submit">Complete Payment</button>
                 <button type="reset">Reset</button>
-                <a href="cart.html" class="back-to-cart">Back to Cart</a>
+                <a href="/html/cart.html" class="back-to-cart">Back to Cart</a>
             </div>
         </form>
         
